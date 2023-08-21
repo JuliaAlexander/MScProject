@@ -2,7 +2,8 @@
 	#In this example, the classifier generates predictions from some Vietnam Phase 1-2 main survey folders
 
 #Importing function
-from Location_predictions_function import *
+##from Location_predictions_function import *
+from 4_G1_Function_to_import_into_G2,_Location_predictions_function import *
 
 folders_to_predict = ["AU02","AU03","AU04","AU05"]
 

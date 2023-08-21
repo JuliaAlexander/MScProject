@@ -9,19 +9,19 @@ library(readxl) #loading xls metadata
 
 #2. Loading spatial data files
 #a) vector data
-forest_outline <- st_read("c_Outline_forest_shapefile_TrungKhanh_forestblock_smooth.gpkg")
-Vietnam_China_border <- st_read("d_International boundary,_forest_crosses_Vietnam_China_border")
-Vietnam_protected_area <- st_read("e_Vietnamese_protected_area,_Cao vit gibbon conservation area")
-China_protected_area <- st_read("f_China_protected_area,_Bangliang National Nature Reserve")
+forest_outline <- st_read("../data/Spatial_layers/c_Outline_forest_shapefile_TrungKhanh_forestblock_smooth.gpkg")
+Vietnam_China_border <- st_read("../data/Spatial_layers/d_International boundary,_forest_crosses_Vietnam_China_border")
+Vietnam_protected_area <- st_read("../data/Spatial_layers/e_Vietnamese_protected_area,_Cao vit gibbon conservation area")
+China_protected_area <- st_read("../data/Spatial_layers/f_China_protected_area,_Bangliang National Nature Reserve")
 #b) raster data
-elevation <- rast("g_Digital_elevation_model,_ALOS PALSAR_clip.tif")
-tree_cover <- rast("h_tree cover,_from_Hansen_2013.tif")
-land_type <- rast("i_landcover_made_by_Ollie,_pixel_value_1_is_forest,_REMAP TK landcover_proj_updated_v2.tif")
-tree_height <- rast("m_tree height.tif")
-slope <- rast("n_ALOS Palsar slope.tif")
+elevation <- rast("../data/Spatial_layers/g_Digital_elevation_model,_ALOS PALSAR_clip.tif")
+tree_cover <- rast("../data/Spatial_layers/h_tree cover,_from_Hansen_2013.tif")
+land_type <- rast("../data/Spatial_layers/i_landcover_made_by_Ollie,_pixel_value_1_is_forest,_REMAP TK landcover_proj_updated_v2.tif")
+tree_height <- rast("../data/Spatial_layers/m_tree height.tif")
+slope <- rast("../data/Spatial_layers/n_ALOS Palsar slope.tif")
 #c) csv data - AudioMoth coordinates
-Main_metadata <- read_excel("k_2021_AudioMoth deployment locations all_withfoldernames.xls")
-Prel_metadata <- read_excel("l_2020_Preliminary AudioMoth deployment.xls")
+Main_metadata <- read_excel("../data/Spatial_layers/k_2021_AudioMoth deployment locations all_withfoldernames.xls")
+Prel_metadata <- read_excel("../data/Spatial_layers/l_2020_Preliminary AudioMoth deployment.xls")
       #raw_metadata <- read.csv("a_AudioMoth deployment locations all.csv")
 #converting data frame to an sf object
       #AudioMoth_coordinates <- st_as_sf(raw_metadata, coords = c('X','Y'), crs=32648)
@@ -380,7 +380,7 @@ for (i in (1:nrow(Prel_dist_table))){
 }
 
 #d) saving csv
-write.csv(Main_dist_table, "..data/A2_Main_17d)_Summary_2021_metadata_55coordinates.csv", row.names = F)
+write.csv(Main_dist_table, "../data/A2_Main_17d)_Summary_2021_metadata_55coordinates.csv", row.names = F)
 write.csv(Prel_dist_table, "../data/A1_Prel_17e)_Summary_2020_metadata_18rows.csv", row.names = F)
 
 

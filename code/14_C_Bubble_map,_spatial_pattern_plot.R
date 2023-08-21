@@ -8,7 +8,7 @@ library(ggplot2)
 
 #2. load dataset
 #setwd
-counts_by_site <- read.csv("C1_GLM_table_19cols.csv")
+counts_by_site <- read.csv("../data/C1_GLM_table_19cols.csv")
 
 #3. Counts per 30 min of sampling
 #mm
@@ -47,10 +47,10 @@ sf_counts_by_site <- st_as_sf(counts_by_site, coords = c('X','Y'), crs=32648)
 #4. load forest outline
 ## spatial data files
 #a) vector data
-forest_outline <- st_read("c_Outline_forest_shapefile_TrungKhanh_forestblock_smooth.gpkg")
-Vietnam_China_border <- st_read("d_International boundary,_forest_crosses_Vietnam_China_border")
-Vietnam_protected_area <- st_read("e_Vietnamese_protected_area,_Cao vit gibbon conservation area")
-China_protected_area <- st_read("f_China_protected_area,_Bangliang National Nature Reserve")
+forest_outline <- st_read("../data/Spatial_layers/c_Outline_forest_shapefile_TrungKhanh_forestblock_smooth.gpkg")
+Vietnam_China_border <- st_read("../data/Spatial_layers/d_International boundary,_forest_crosses_Vietnam_China_border")
+Vietnam_protected_area <- st_read("../data/Spatial_layers/e_Vietnamese_protected_area,_Cao vit gibbon conservation area")
+China_protected_area <- st_read("../data/Spatial_layers/f_China_protected_area,_Bangliang National Nature Reserve")
 # #b) raster data
 # elevation <- rast("g_Digital_elevation_model,_ALOS PALSAR_clip.tif")
 # tree_cover <- rast("h_tree cover,_from_Hansen_2013.tif")

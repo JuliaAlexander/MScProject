@@ -5,10 +5,10 @@
 #setwd
 
 #a) Loading my labelled clips
-Labelled_1st <- read.csv("..data/B1_human_labels,_Labelling_validating_set_v5,_corrected_owl.csv")
+Labelled_1st <- read.csv("../data/B1_human_labels,_Labelling_validating_set_v5,_corrected_owl.csv")
 
 #b) Loading metadata of selected clips
-Metadata_1st <- read.csv("..data/B2_classifier_predictions,_Validating_2021_dataset,_shuffled_with_model_predictions.csv")
+Metadata_1st <- read.csv("../data/B2_classifier_predictions,_Validating_2021_dataset,_shuffled_with_model_predictions.csv")
 Model_MT <- Metadata_1st[,c(1,9:12,19,20,26)]
 
 #-----------------------------------

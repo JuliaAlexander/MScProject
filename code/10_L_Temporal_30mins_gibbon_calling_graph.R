@@ -249,7 +249,7 @@ ggplot(Q_time_mm_sc2, aes(as.factor(Time), Mean, fill=Category))+
        fill="Call type")+
   geom_text(aes(label=Mean_1dp),
             position=position_dodge(.9), size=10/.pt)
-ggsave("L1_13d.Ncall_vs_half_hour,_mm_sc_dodge_Barplot,_mean_call_rate_per_30mins,_with_9am_part.png", width=9, height=6)
+ggsave("../results/L1_13d.Ncall_vs_half_hour,_mm_sc_dodge_Barplot,_mean_call_rate_per_30mins,_with_9am_part.png", width=9, height=6)
 
 
 
