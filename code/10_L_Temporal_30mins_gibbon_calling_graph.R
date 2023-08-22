@@ -40,9 +40,11 @@ gc()
 #Examining gibbon calls per half hour
 
 #1. half hours
+library(hms)
 half_hours <- as_hms(c("4:30:00", "5:00:00", "5:30:00", "6:00:00", "6:30:00",
                        "7:00:00", "7:30:00", "8:00:00", "8:30:00", "9:00:00", "9:30:00",
                        "10:00:00","10:30:00","11:00:00","11:30:00","12:00:00"))
+Audio_table$clip_start_clock_hms <- as_hms(Audio_table$clip_start_clock)
 
 #2. gc
 #a) counting by file
@@ -237,7 +239,7 @@ Q_time_mm_sc2 <- rbind(Q_mm_time2,Q_sc_time2)
 Q_time_mm_sc2$Mean_1dp <- formatC(round(Q_time_mm_sc2$Mean,1), digits=1, format="f")
 
 #f) saving mm sc combined quantiles
-#write.csv(Q_time_mm_sc2, "Quatile_mm_sc_combined,_with_9am_part.csv", row.names=F)
+write.csv(Q_time_mm_sc2, "../results/L1_Quatile_mm_sc_combined,_with_9am_part.csv", row.names=F)
 
 #g) graph
 ggplot(Q_time_mm_sc2, aes(as.factor(Time), Mean, fill=Category))+
@@ -249,7 +251,7 @@ ggplot(Q_time_mm_sc2, aes(as.factor(Time), Mean, fill=Category))+
        fill="Call type")+
   geom_text(aes(label=Mean_1dp),
             position=position_dodge(.9), size=10/.pt)
-ggsave("../results/L1_13d.Ncall_vs_half_hour,_mm_sc_dodge_Barplot,_mean_call_rate_per_30mins,_with_9am_part.png", width=9, height=6)
+ggsave("../results/L2_13d.Ncall_vs_half_hour,_mm_sc_dodge_Barplot,_mean_call_rate_per_30mins,_with_9am_part.png", width=9, height=6)
 
 
 
