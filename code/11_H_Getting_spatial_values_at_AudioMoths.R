@@ -256,21 +256,20 @@ for (i in (1:nrow(Prel_edge_table))){
     # write.csv(Main_edge_table, "../17d)_Summary_2021_metadata_55coordinates_raster_PA,_incl_treeheight_slope,_aspect.csv", row.names = F)
     # write.csv(Prel_edge_table, "../17e)_Summary_2020_metadata_18rows_raster_PA,_incl_treeheight_slope,_aspect.csv", row.names = F)
 
-
-#f) 2020 sites Edge - Plot with station IDs
-pdf("../17f)_Forest_Edge_2020_station_ID,_forest_outline_map.pdf")
-plot(st_geometry(forest_outline), axes=TRUE, col="blue")
-plot(st_geometry(China_protected_area), axes=TRUE, add=TRUE, col="darkgreen")
-plot(st_geometry(Vietnam_protected_area), axes=TRUE, add=TRUE, col="red")
-plot(st_cast(st_geometry(forest_outline), 'LINESTRING'), axes=TRUE, add=TRUE, col="blue", lwd=2)
-plot(st_geometry(Vietnam_China_border), axes=TRUE,add=TRUE, lwd=2)
-text(as.data.frame(st_coordinates(Prel_centre))$X,
-     as.data.frame(st_coordinates(Prel_centre))$Y, 
-     labels=st_drop_geometry(Prel_centre)$StationID, col="yellow", cex=0.9)
-text(as.data.frame(st_coordinates(Prel_border))$X,
-     as.data.frame(st_coordinates(Prel_border))$Y, 
-     labels=st_drop_geometry(Prel_border)$StationID, col="pink", cex=0.9)
-dev.off()
+    # #f) 2020 sites Edge - Plot with station IDs
+    # pdf("../17f)_Forest_Edge_2020_station_ID,_forest_outline_map.pdf")
+    # plot(st_geometry(forest_outline), axes=TRUE, col="blue")
+    # plot(st_geometry(China_protected_area), axes=TRUE, add=TRUE, col="darkgreen")
+    # plot(st_geometry(Vietnam_protected_area), axes=TRUE, add=TRUE, col="red")
+    # plot(st_cast(st_geometry(forest_outline), 'LINESTRING'), axes=TRUE, add=TRUE, col="blue", lwd=2)
+    # plot(st_geometry(Vietnam_China_border), axes=TRUE,add=TRUE, lwd=2)
+    # text(as.data.frame(st_coordinates(Prel_centre))$X,
+    #      as.data.frame(st_coordinates(Prel_centre))$Y, 
+    #      labels=st_drop_geometry(Prel_centre)$StationID, col="yellow", cex=0.9)
+    # text(as.data.frame(st_coordinates(Prel_border))$X,
+    #      as.data.frame(st_coordinates(Prel_border))$Y, 
+    #      labels=st_drop_geometry(Prel_border)$StationID, col="pink", cex=0.9)
+    # dev.off()
 
 
 #7. Finding distance from sites to forest edge
